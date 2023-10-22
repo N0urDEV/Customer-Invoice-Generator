@@ -1,0 +1,27 @@
+Algorithme : caisse_enregistreuse
+
+Variables :
+  name, item_ref: chaine de caractères
+  price_before_tax, ttc, s: réel
+  n, client: entier
+
+Début
+  Pour client de 1 à 3 faire
+    Ecrire ("Donner le nom et prénom du client n", client, " : ")
+    Lire (name)
+    Ecrire ("Donner le nombre d’articles pour le client n", client, " : ")
+    Lire (n)
+
+    price_before_tax <- 0
+
+    Pour article de 1 à n faire
+      Ecrire ("Donner le prix de l’article ", article, " : ")
+      Lire (s)
+      price_before_tax <- price_before_tax + s
+    Fin Pour
+
+    ttc <- price_before_tax + (price_before_tax * 0.15) - (price_before_tax * 0.02)
+
+    Ecrire ("Le Total à payer pour le client ", name, " est : ", ttc, " DH")
+  Fin Pour
+Fin
